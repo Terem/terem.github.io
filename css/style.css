@@ -1,0 +1,767 @@
+@import 'fonts.css';
+html {
+  box-sizing: border-box;
+}
+
+*, *:after, *:before {
+  box-sizing: inherit;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+}
+
+.main {
+  font-family: "SF Bold", "Segoe System UI Bold", "Segoe UI Bold", sans-serif;
+  display: flex;
+}
+
+.container {
+  position: relative;
+  display: flex;
+  overflow: hidden;
+}
+
+.nav {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border-width: 0px 1px 0px 0px;
+  border-style: solid;
+  border-color: rgb(213, 217, 222);
+  background-color: rgb(240, 244, 248);
+  width: 322px;
+}
+
+.nav__top {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  overflow: visible;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.circle-logo {
+  display: flex;
+  background-color: rgb(229, 228, 232);
+  width: 36px;
+  height: 36px;
+  margin-left: 8px;
+  margin-right: 10px;
+  border-radius: 18px;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.circle-logo::after {
+  content: '';
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  border-color: rgb(240, 244, 248);
+  border-style: solid;
+  border-width: 2px;
+  width: 13px;
+  height: 13px;
+  justify-content: center;
+  background-color: rgb(255, 186, 0);
+  border-radius: 50%;
+}
+
+.letter-logo {
+  position: relative;
+  display: inline;
+  flex-grow: 0;
+  flex-shrink: 0;
+  overflow: hidden;
+  white-space: pre;
+  text-overflow: ellipsis;
+  font-size: 12px;
+  color: rgb(0, 120, 212);
+  font-family: "SF Bold", "Segoe System UI Bold", "Segoe UI Bold", sans-serif;
+  font-weight: 400;
+  background-color: rgba(0, 0, 0, 0);
+  cursor: inherit;
+}
+
+.user__name {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 210px;
+}
+
+.user__name-name {
+  font-size: 12px;
+  color: rgb(37, 36, 35);
+  font-family: "SF Regular", "Segoe System UI Regular", "Segoe UI Regular", sans-serif;
+  font-weight: 400;
+}
+
+.user__name-money {
+  margin-left: 8px;
+  font-size: 12px;
+  color: rgb(138, 141, 145);
+  font-family: "SF Regular", "Segoe System UI Regular", "Segoe UI Regular", sans-serif;
+  font-weight: 400;
+}
+
+.user__dots {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 8px 10px 8px 8px;
+  justify-content: flex-end;
+  margin-right: 10px;
+}
+
+.dots {
+  width: 4px;
+  height: 4px;
+  margin: 0px 2px;
+  background-color: rgb(43, 44, 51);
+  border-radius: 50%;
+}
+
+.user__dots:hover .dots {
+  background-color: rgba(43, 44, 51, 0.7);
+}
+
+.nav__search {
+  width: 305px;
+  height: 50px;
+  padding-top: 5px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.nav__search input {
+  display: block;
+  width: 100%;
+  height: 32px;
+  border-radius: 5px;
+  border: 1px solid rgb(213, 217, 222);
+  font-size: 12px;
+  font-weight: 400;
+  color: rgb(138, 141, 145);
+  outline: none;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.magnifier {
+  position: absolute;
+  border: none;
+  background-color: transparent;
+  left: 4px;
+  top: 12px;
+}
+
+.keypad {
+  position: absolute;
+  border: none;
+  background-color: transparent;
+  height: 32px;
+  left: 274px;
+  top: 5px;
+  border-left: 1px solid rgb(213, 217, 222);
+}
+
+.nav__menu {
+  display: flex;
+  justify-content: space-between;
+  border-width: 0px 0px 1px 0px;
+  border-style: solid;
+  border-color: rgb(213, 217, 222);
+  padding-bottom: 2px;
+  padding-top: 2px;
+}
+
+.menu__item {
+  display: flex;
+  flex-direction: column;
+  width: 80px;
+  height: 50px;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu__item:hover .menu__item-image svg g {
+  fill: rgb(0, 120, 212);
+}
+
+.menu__item:hover .menu__item-title {
+  color: rgb(0, 120, 212);
+}
+
+.menu__item-image {
+  width: 20px;
+  height: 20px;
+  color: rgb(43, 44, 51);
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.menu__item-title {
+  font-size: 10px;
+  color: rgb(138, 141, 145);
+  font-weight: 400;
+  opacity: 0.8;
+  text-align: center;
+  margin-top: 2px;
+}
+
+.chats .menu__item-image svg g {
+  fill: rgb(0, 120, 212);
+}
+
+.chats .menu__item-title {
+  color: rgb(0, 120, 212);
+}
+
+.nav__buttons {
+  display: flex;
+  overflow: hidden;
+  align-items: center;
+  justify-content: space-around;
+  padding: 12px 3px 2px;
+}
+
+.nav__buttons button {
+  padding: 0 42px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 15px;
+  min-height: 32px;
+  border: 1px solid rgb(229, 228, 232);
+  cursor: pointer;
+  font-size: 12px;
+  font-family: "SF Regular", "Segoe System UI Regular", "Segoe UI Regular", sans-serif;
+  font-weight: 400;
+  color: rgb(43, 44, 51);
+  position: relative;
+}
+
+.conf::before {
+  content: "\f03d";
+  font-family: 'icomoon';
+  position: absolute;
+  top: 8px;
+  left: 22px;
+  font-size: 14px;
+  color: rgb(138, 141, 145);
+}
+
+.conf::after {
+  content: "\f078";
+  font-family: 'icomoon';
+  position: absolute;
+  top: 10px;
+  left: 110px;
+  font-size: 12px;
+  color: rgb(138, 141, 145);
+  font-weight: 200;
+}
+
+.chat::before {
+  content: "\f044";
+  font-family: 'icomoon';
+  position: absolute;
+  top: 8px;
+  left: 22px;
+  font-size: 14px;
+  color: rgb(43, 44, 51);
+}
+
+.chat::after {
+  content: "\f078";
+  font-family: 'icomoon';
+  position: absolute;
+  top: 10px;
+  left: 110px;
+  font-size: 12px;
+  color: rgb(138, 141, 145);
+  font-weight: 200;
+}
+
+.chats__list {
+  margin: 20px 0;
+}
+
+.chats__list-title {
+  font-size: 12px;
+  color: rgb(138, 141, 145);
+  font-family: "SF Bold", "Segoe System UI Bold", "Segoe UI Bold", sans-serif;
+  font-weight: 600;
+  position: relative;
+  margin: 0 10px 12px;
+}
+
+.chats__list-title::after {
+  content: "\f078";
+  font-family: 'icomoon';
+  position: absolute;
+  top: 0px;
+  left: 96px;
+  font-size: 12px;
+  color: rgb(138, 141, 145);
+  font-weight: 200;
+}
+
+.chats__list-item {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  padding: 0 10px;
+  overflow: visible;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  height: 59px;
+}
+
+.chats__list-item:hover {
+  background-color: rgba(199, 272, 252, 0.5);
+}
+
+.chats__list-item .user {
+  display: flex;
+  align-items: center;
+}
+
+.chats__list-item .foto {
+  min-width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-position: center;
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-right: 10px;
+  position: relative;
+}
+
+.chats__list-item .foto::after {
+  content: '';
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  border-color: rgb(240, 244, 248);
+  border-style: solid;
+  border-width: 2px;
+  width: 13px;
+  height: 13px;
+  justify-content: center;
+  background-color: #4dd965;
+  border-radius: 50%;
+}
+
+.chats__list-item .date {
+  font-size: 12px;
+  color: rgb(138, 141, 145);
+  font-weight: 400;
+  height: 36px;
+}
+
+.info .info-name {
+  font-size: 15px;
+  margin-bottom: 0;
+  color: rgb(37, 36, 35);
+  font-family: "SF Regular", "Segoe System UI Regular", "Segoe UI Regular", sans-serif;
+  font-weight: 400;
+  line-height: 19px;
+  cursor: inherit;
+}
+
+.info .info-text {
+  font-size: 15px;
+  line-height: 22px;
+  letter-spacing: -0.2px;
+  font-family: "SF Regular", "Segoe System UI Regular", "Segoe UI Regular", sans-serif;
+  color: rgb(138, 141, 145);
+  align-self: stretch;
+  background-color: rgba(0, 0, 0, 0);
+  font-weight: 400;
+  cursor: inherit;
+}
+
+/**************  content ******************/
+
+.content__container {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  align-items: stretch;
+  justify-content: space-between;
+  width: 100%;
+  height: 100vh;
+}
+
+
+
+.content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  align-items: stretch;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.header {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-self: stretch;
+  justify-content: space-between;
+  height: 88px;
+  /*margin: 20px 15px 20px 20px;*/
+  padding-left: 20px;
+  padding-right: 15px;
+  background-color: rgb(255, 255, 255);
+  border-width: 0px 0px 1px;
+  border-style: solid;
+  border-color: rgba(69, 72, 82, 0.2);
+}
+
+.header__info {
+  display: flex;
+  flex-direction: column;
+  padding-top: 5px;
+}
+
+.header__info .user__name {
+  color: rgb(43, 44, 51);
+  font-size: 24px;
+  font-family: "SF Bold", "Segoe System UI Bold", "Segoe UI Bold", sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.header__info .user__name:hover {
+  opacity: 0.8;
+}
+
+.user__info {
+  display: flex;
+  align-items: flex-start;
+  padding-top: 3px;
+  font-size: 12px;
+  color: rgb(138, 141, 145);
+  font-family: "SF Bold", "Segoe System UI Bold", "Segoe UI Bold", sans-serif;
+  font-weight: 600;
+  line-height: 25px;
+  cursor: pointer;
+  position: relative;
+}
+
+.info-online {
+  padding-left: 14px;
+  padding-right: 15px;
+  position: relative;
+}
+
+.info-online::before {
+  content: '';
+  position: absolute;
+  top: 5px;
+  left: 0;
+  border-color: #fff;
+  border-style: solid;
+  border-width: 2px;
+  width: 13px;
+  height: 13px;
+  justify-content: center;
+  background-color: #4dd965;
+  border-radius: 50%;
+}
+
+.info-online::after {
+  content: '|';
+  position: absolute;
+  top: -1px;
+  left: 164px;
+  font-size: 14px;
+  color: rgb(138, 141, 145);
+  font-weight: 600;
+}
+
+.info-collection {
+  padding-left: 18px;
+  padding-right: 15px;
+  position: relative;
+}
+
+.info-collection::before {
+  content: '\e90e';
+  position: absolute;
+  font-family: 'icomoon';
+  font-size: 12px;
+  color: rgb(138, 141, 145);
+  top: 0;
+  left: 0;
+}
+
+.info-collection::after {
+  content: '|';
+  position: absolute;
+  top: -1px;
+  left: 88px;
+  font-size: 14px;
+  color: rgb(138, 141, 145);
+  font-weight: 600;
+}
+
+.info-search {
+  padding-left: 16px;
+  position: relative;
+}
+
+.info-search::before {
+  content: '\f002';
+  position: absolute;
+  font-family: 'icomoon';
+  font-size: 12px;
+  font-weight: 200;
+  color: rgb(138, 141, 145);
+  top: 0;
+  left: 0;
+}
+
+.header__buttons {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.videocall, .voicecall, .group {
+  min-width: 40px;
+  height: 40px;
+  margin-left: 10px;
+  border: none;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(241, 241, 244);
+  position: relative;
+}
+
+.videocall::before {
+  content: '\f03d';
+  position: absolute;
+  font-family: 'icomoon';
+  top: 9px;
+  left: 10px;
+  font-size: 20px;
+  color: rgb(138, 141, 145);
+}
+
+.voicecall::before {
+  content: '\f095';
+  position: absolute;
+  font-family: 'icomoon';
+  top: 10px;
+  left: 12px;
+  font-size: 20px;
+  color: rgb(138, 141, 145);
+}
+
+.group::before {
+  content: '\f234';
+  position: absolute;
+  font-family: 'icomoon';
+  top: 9px;
+  left: 11px;
+  font-size: 20px;
+  color: rgb(138, 141, 145);
+}
+
+/******************  messages *********************/
+
+.messages {
+  display: flex;
+  flex-direction: column;
+  margin: 10px 80px 10px 30px;
+  overflow: hidden;
+}
+
+.guest__msg {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  padding-bottom: 10px;
+}
+
+.guest__msg-pic {
+  min-width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-position: center;
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-right: 10px;
+  position: relative;
+}
+
+.guest__msg-time {
+  font-size: 12px;
+  color: rgb(138, 141, 145);
+  font-weight: 400;
+}
+
+.guest__msg-text {
+  padding: 9px 12px 8px 11px;
+  margin-bottom: 2px;
+  border-radius: 0px 10px 10px;
+  background-color: rgb(242, 246, 249);
+  font-size: 14px;
+  line-height: 22px;
+  letter-spacing: -0.2px;
+  color: rgb(37, 36, 35);
+  font-weight: 400;
+  position: relative;
+}
+
+.guest__msg-text::after {
+  content: '\f118';
+  position: absolute;
+  font-family: 'icomoon';
+  top: 0;
+  right: -20px;
+  font-size: 16px;
+  color: rgb(138, 141, 145);
+}
+
+.my__msg {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding-bottom: 10px;
+}
+
+.my__msg-time {
+  font-size: 12px;
+  color: rgb(138, 141, 145);
+  font-weight: 400;
+}
+
+.my__msg-text {
+  padding: 9px 12px 8px 11px;
+  border-radius: 10px 10px 0px;
+  background-color: rgb(219, 244, 253);
+  font-size: 14px;
+  line-height: 22px;
+  letter-spacing: -0.2px;
+  color: rgb(37, 36, 35);
+  font-weight: 400;
+  position: relative;
+}
+
+/****************  footer ********************/
+
+.footer {
+  position: relative;
+  margin: 10px 80px 20px;
+}
+
+.footer__inner {
+  display: flex;
+  height: 50px;
+}
+
+.inner__buttons {
+  display: flex;
+}
+
+.message-area {
+  display: flex;
+  align-items: center;
+  padding-left: 58px;
+  background-color: rgb(241, 241, 244);
+  border-radius: 24px;
+  font-size: 14px;
+  font-weight: 400;
+  color: rgb(138, 141, 145);
+  width: 100%;
+  position: relative;
+}
+
+.message-area::before {
+  content: '\f118';
+  position: absolute;
+  font-family: 'icomoon';
+  top: 11px;
+  left: 15px;
+  height: 24px;
+  font-size: 24px;
+  color: rgb(43, 44, 51);
+}
+
+.add-file, .send-contact, .record-message, .three-point {
+  background-color: rgb(241, 241, 244);
+  border-color: transparent;
+  text-align: left;
+  border-width: 0px;
+  margin-top: 5px;
+  margin-left: 8px;
+  border-radius: 20px;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  border-style: solid;
+  position: relative;
+}
+
+.add-file:hover, .send-contact:hover, .record-message:hover, .three-point:hover {
+  background-color: rgb(229, 228, 232);
+}
+
+.add-file::before {
+  content: '\f1c5';
+  position: absolute;
+  font-family: 'icomoon';
+  top: 9px;
+  left: 12px;
+  height: 20px;
+  font-size: 20px;
+  color: rgb(43, 44, 51);
+}
+
+.send-contact::before {
+  content: '\f2bc';
+  position: absolute;
+  font-family: 'icomoon';
+  top: 9px;
+  left: 9px;
+  height: 20px;
+  font-size: 20px;
+  color: rgb(43, 44, 51);
+}
+
+.record-message::before {
+  content: '\e91e';
+  position: absolute;
+  font-family: 'icomoon';
+  top: 10px;
+  left: 10px;
+  height: 20px;
+  font-size: 20px;
+  color: rgb(43, 44, 51);
+}
+
+.three-point::before {
+  content: '\f141';
+  position: absolute;
+  font-family: 'icomoon';
+  top: 10px;
+  left: 12px;
+  height: 20px;
+  font-size: 20px;
+  color: rgb(43, 44, 51);
+}
